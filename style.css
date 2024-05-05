@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.testimonial-slider-container {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  position: relative;
+}
+.veiw-box {
+  width: 900px;
+  height: 460px;
+  border-radius: 220px;
+  padding: 20px 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#testimonials {
+  display: flex;
+  transition: 0.5s;
+}
+.user {
+  width: 800px;
+  text-align: center;
+  padding: 20px 70px;
+  box-sizing: border-box;
+  background: transparent;
+  border: 3px solid #00ff37;
+  border-radius: 200px;
+  box-shadow: 0 10px 20px -5px #00ff3757;
+  position: relative;
+}
+
+.space {
+  margin: 0 70px;
+}
+.user img {
+  width: 120px;
+  border-radius: 50%;
+  border: 3px solid #00ff37;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+}
+.user p {
+  font-size: 18px;
+  color: #ab8de2;
+  line-height: 32px;
+  margin: 60px 0 30px;
+}
+.user p::before {
+  content: "\201C";
+  font-size: 120px;
+  height: 0;
+  display: inline-block;
+  vertical-align: -57;
+  margin-right: 10px;
+  color: #00ff3788;
+}
+.user p::after {
+  content: "\201D";
+  font-size: 120px;
+  height: 0;
+  display: inline-block;
+  vertical-align: -70;
+  margin-left: 10px;
+  color: #00ff3788;
+}
+.user h3 {
+  font-size: 26px;
+  color: #3f4640;
+}
+.user .testi-job {
+  color: #9dc861;
+}
+.controls {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.controls span {
+  width: 15px;
+  height: 15px;
+  background: #10f040;
+  border-radius: 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.active {
+  width: 45px !important;
+}
