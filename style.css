@@ -6,13 +6,14 @@
 
 .testimonial-slider-container {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   background: #fff;
   position: relative;
 }
+
 .veiw-box {
   width: 900px;
-  height: 460px;
+  height: 480px;
   border-radius: 220px;
   padding: 20px 0px;
   position: absolute;
@@ -23,11 +24,14 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
 }
+
 #testimonials {
   display: flex;
   transition: 0.5s;
 }
+
 .user {
   width: 800px;
   text-align: center;
@@ -43,6 +47,7 @@
 .space {
   margin: 0 70px;
 }
+
 .user img {
   width: 120px;
   border-radius: 50%;
@@ -53,37 +58,44 @@
   transform: translateX(-50%);
   object-fit: cover;
 }
+
 .user p {
   font-size: 18px;
   color: #ab8de2;
   line-height: 32px;
-  margin: 60px 0 30px;
+  margin: 60px 0px 0 0px;
 }
+
 .user p::before {
   content: "\201C";
   font-size: 120px;
   height: 0;
   display: inline-block;
-  vertical-align: -57;
-  margin-right: 10px;
+  vertical-align: -60;
+  margin-top: -10px;
+  margin-right: -10px;
   color: #00ff3788;
 }
+
 .user p::after {
   content: "\201D";
   font-size: 120px;
   height: 0;
   display: inline-block;
-  vertical-align: -70;
-  margin-left: 10px;
+  vertical-align: -90;
+  margin-left: -10px;
   color: #00ff3788;
 }
+
 .user h3 {
   font-size: 26px;
   color: #3f4640;
 }
+
 .user .testi-job {
   color: #9dc861;
 }
+
 .controls {
   display: flex;
   position: absolute;
@@ -91,6 +103,7 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
 .controls span {
   width: 15px;
   height: 15px;
@@ -100,6 +113,15 @@
   cursor: pointer;
   transition: 0.5s;
 }
+
 .active {
   width: 45px !important;
+}
+
+.btn-action {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
