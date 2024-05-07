@@ -8,67 +8,130 @@
     <div class="testimonial-slider-container">
       <div class="veiw-box">
         <div id="testimonials">
-          <div class="user">
+          <div class="user-testimonial">
             <img src="images/user1.jpg" alt="" />
             <p>
-             Garden HUB Company is professional, creative and concept from knowledgeable. Dwayne our designer was patient, accommodating and experienced Michael Gregory worked with me to bring my concept from design to reality - providing much appreciated guidance laborious except to obtain
+              Garden HUB Company is professional, creative and concept from
+              knowledgeable. Dwayne our designer was patient, accommodating and
+              experienced Michael Gregory worked with me to bring my concept
+              from design to reality - providing much appreciated guidance
+              laborious except to obtain
             </p>
             <h3>Hanan Innocent</h3>
             <span class="testi-job">Washington</span>
           </div>
 
-          <div class="user space">
+          <div class="user-testimonial space-testimonial">
             <img src="images/user2.jpg" alt="" />
             <p>
-             Garden HUB Company is professional, creative and concept from knowledgeable. Dwayne our designer was patient, accommodating and experienced Michael Gregory worked with me to bring my concept from design to reality - providing much appreciated guidance laborious except to obtain
+              Garden HUB Company is professional, creative and concept from
+              knowledgeable. Dwayne our designer was patient, accommodating and
+              experienced Michael Gregory worked with me to bring my concept
+              from design to reality - providing much appreciated guidance
+              laborious except to obtain
             </p>
             <h3>Hanan Innocent</h3>
             <span class="testi-job">Washington</span>
           </div>
 
-          <div class="user">
+          <div class="user-testimonial">
             <img src="images/user1.jpg" alt="" />
             <p>
-             Garden HUB Company is professional, creative and concept from knowledgeable. Dwayne our designer was patient, accommodating and experienced Michael Gregory worked with me to bring my concept from design to reality - providing much appreciated guidance laborious except to obtain
+              Garden HUB Company is professional, creative and concept from
+              knowledgeable. Dwayne our designer was patient, accommodating and
+              experienced Michael Gregory worked with me to bring my concept
+              from design to reality - providing much appreciated guidance
+              laborious except to obtain
             </p>
             <h3>Hanan Innocent</h3>
             <span class="testi-job">Washington</span>
           </div>
         </div>
 
-        <div class="controls">
-          <span id="control1"></span>
-          <span id="control2" class="active"></span>
-          <span id="control3"></span>
+        <div class="controls-testimonial">
+          <!-- Add the next control -->
+          <span id="control1-testimonial"></span>
+          <span id="control2-testimonial" class="active-testimonial"></span>
+          <span id="control3-testimonial"></span>
+        </div>
+        <div class="btn-action-testimonial">
+          <img src="./images/arrow.png" id="testimonial-prev-control" alt="" />
+          <img src="./images/arrow.png" id="testimonial-next-control" alt="" />
         </div>
       </div>
     </div>
 
     <script>
-      var testimonials = document.getElementById("testimonials");
-      var control1 = document.getElementById("control1");
-      var control2 = document.getElementById("control2");
-      var control3 = document.getElementById("control3");
+      var control1 = document.getElementById("control1-testimonial");
+      var control2 = document.getElementById("control2-testimonial");
+      var control3 = document.getElementById("control3-testimonial");
+      var prevControl = document.getElementById("testimonial-prev-control");
+      var nextControl = document.getElementById("testimonial-next-control");
 
+      // Function to set active control based on the active user testimonial
+      function setActiveControl(activeUser) {
+        var activeControl = null;
+
+        // Determine which control corresponds to the active user testimonial
+        if (activeUser === 1) {
+          activeControl = control1;
+        } else if (activeUser === 2) {
+          activeControl = control2;
+        } else if (activeUser === 3) {
+          activeControl = control3;
+        }
+
+        // Make the active control visually active
+        if (activeControl !== null) {
+          document
+            .querySelector(".controls-testimonial .active-testimonial")
+            .classList.remove("active-testimonial");
+          activeControl.classList.add("active-testimonial");
+        }
+      }
+
+      // Event listeners for control buttons
       control1.onclick = function () {
-        testimonials.style.transform = "translateX(870px)";
-        control1.classList.add("active");
-        control2.classList.remove("active");
-        control3.classList.remove("active");
+        document.getElementById("testimonials").classList = "translateX1";
+
+        setActiveControl(1); // User testimonial 1 is active-testimonial
       };
 
       control2.onclick = function () {
-        testimonials.style.transform = "translateX(0px)";
-        control1.classList.remove("active");
-        control2.classList.add("active");
-        control3.classList.remove("active");
+        document.getElementById("testimonials").classList = "translateX2";
+
+        setActiveControl(2); // User testimonial 2 is active-testimonial
       };
 
       control3.onclick = function () {
-        testimonials.style.transform = "translateX(-870px)";
-        control1.classList.remove("active");
-        control2.classList.remove("active");
-        control3.classList.add("active");
+        document.getElementById("testimonials").classList = "translateX3";
+
+        setActiveControl(3); // User testimonial 3 is active-testimonial
+      };
+
+      prevControl.onclick = function () {
+        var activeControl = document.querySelector(
+          ".controls-testimonial .active-testimonial"
+        );
+        if (activeControl.id === "control1-testimonial") {
+          control3.click();
+        } else if (activeControl.id === "control2-testimonial") {
+          control1.click();
+        } else if (activeControl.id === "control3-testimonial") {
+          control2.click();
+        }
+      };
+      nextControl.onclick = function () {
+        var activeControl = document.querySelector(
+          ".controls-testimonial .active-testimonial"
+        );
+        if (activeControl.id === "control1-testimonial") {
+          control2.click();
+        } else if (activeControl.id === "control2-testimonial") {
+          control3.click();
+        } else if (activeControl.id === "control3-testimonial") {
+          control1.click();
+        }
       };
     </script>
   </body>
